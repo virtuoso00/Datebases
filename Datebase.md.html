@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>Datebase</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); background-color: rgb(40, 44, 52); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); border-image: initial; background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.04); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher.bracket-matcher {
+  color: #abb2bf;
+  background-color: #3a3f4b;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 2px;
+  background-color: rgba(82, 139, 255, 0.24);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #528bff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #3a3f4b;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #abb2bf;
+}
+.syntax--comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.syntax--comment .syntax--markup.syntax--link {
+  color: #5c6370;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #98c379;
+}
+.syntax--keyword {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--control {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--operator {
+  color: #abb2bf;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #61afef;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #d19a66;
+}
+.syntax--storage {
+  color: #c678dd;
+}
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
+  color: #c678dd;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
+  color: #abb2bf;
+}
+.syntax--constant {
+  color: #d19a66;
+}
+.syntax--constant.syntax--variable {
+  color: #d19a66;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--numeric {
+  color: #d19a66;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #56b6c2;
+}
+.syntax--variable {
+  color: #e06c75;
+}
+.syntax--variable.syntax--interpolation {
+  color: #be5046;
+}
+.syntax--variable.syntax--parameter {
+  color: #abb2bf;
+}
+.syntax--string {
+  color: #98c379;
+}
+.syntax--string.syntax--regexp {
+  color: #56b6c2;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #e5c07b;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #e06c75;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #5c6370;
+}
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #abb2bf;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #61afef;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #be5046;
+}
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
+  color: #abb2bf;
+}
+.syntax--support.syntax--class {
+  color: #e5c07b;
+}
+.syntax--support.syntax--type {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #e06c75;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #d19a66;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #61afef;
+}
+.syntax--meta.syntax--class {
+  color: #e5c07b;
+}
+.syntax--meta.syntax--class.syntax--body {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--definition.syntax--variable {
+  color: #e06c75;
+}
+.syntax--meta.syntax--link {
+  color: #d19a66;
+}
+.syntax--meta.syntax--require {
+  color: #61afef;
+}
+.syntax--meta.syntax--selector {
+  color: #c678dd;
+}
+.syntax--meta.syntax--separator {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--tag {
+  color: #abb2bf;
+}
+.syntax--underline {
+  text-decoration: underline;
+}
+.syntax--none {
+  color: #abb2bf;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.syntax--invalid.syntax--illegal {
+  color: white !important;
+  background-color: #e05252 !important;
+}
+.syntax--markup.syntax--bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #c678dd;
+}
+.syntax--markup.syntax--deleted {
+  color: #e06c75;
+}
+.syntax--markup.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading {
+  color: #e06c75;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #61afef;
+}
+.syntax--markup.syntax--link {
+  color: #56b6c2;
+}
+.syntax--markup.syntax--inserted {
+  color: #98c379;
+}
+.syntax--markup.syntax--quote {
+  color: #d19a66;
+}
+.syntax--markup.syntax--raw {
+  color: #98c379;
+}
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
+  color: #828997;
+}
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--source.syntax--embedded.syntax--source {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--constant.syntax--language,
+.syntax--source.syntax--elixir .syntax--constant.syntax--numeric,
+.syntax--source.syntax--elixir .syntax--constant.syntax--definition {
+  color: #61afef;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--definition,
+.syntax--source.syntax--elixir .syntax--variable.syntax--anonymous {
+  color: #c678dd;
+}
+.syntax--source.syntax--elixir .syntax--parameter.syntax--variable.syntax--function {
+  color: #d19a66;
+  font-style: italic;
+}
+.syntax--source.syntax--elixir .syntax--quoted {
+  color: #98c379;
+}
+.syntax--source.syntax--elixir .syntax--keyword.syntax--special-method,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--section,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--source.syntax--empty {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--readwrite.syntax--module .syntax--punctuation {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--regexp.syntax--section,
+.syntax--source.syntax--elixir .syntax--regexp.syntax--string {
+  color: #be5046;
+}
+.syntax--source.syntax--elixir .syntax--separator,
+.syntax--source.syntax--elixir .syntax--keyword.syntax--operator {
+  color: #d19a66;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--constant {
+  color: #e5c07b;
+}
+.syntax--source.syntax--elixir .syntax--array,
+.syntax--source.syntax--elixir .syntax--scope,
+.syntax--source.syntax--elixir .syntax--section {
+  color: #828997;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
+  color: #61afef;
+}
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
+  color: #c678dd;
+}
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
+  color: #e06c75;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--type {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
+  color: #c678dd;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
+  color: #e06c75;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
+  color: #abb2bf;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #c678dd;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
+  color: #98c379;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
+  color: #56b6c2;
+}
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
+  color: inherit;
+}
+.syntax--source.syntax--php .syntax--class.syntax--bracket {
+  color: #abb2bf;
+}
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
+  color: #c678dd;
+}
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="-">书店管理系统中的数据库模块</h1>
+<h2 id="1-">1.书店管理系统的简单介绍以及数据库中包含的表的内容：</h2>
+<blockquote>
+<p>书店管理系统调用数据库来存储租赁图书用户的信息，图书的信息以及注册的用户信息。当然此书店管理系统还会记录读者对于一本树各个方面的评价星级，以便于用户搜索某一类型的图书时可以由系统推荐评价星级较高的图书，以便读者租赁和购买。一个简单的书店管理系统包括书店内书籍的信息、注册用户的信息、用户的租赁信息以及用户购买图书的信息。此系统功能分为面向注册用户、面向管理员和面向书店派送员三部分，其中用户可以进行租赁、续租、归还、购买书籍以及查询书籍等操作，管理员可以完成书籍和用户的增加，删除和修改以及对用户租赁、续租、归还、购买的确认、快递公司的派送员可以查看到用户购买和租赁书籍的订单信息并从总中获取用户的姓名、联系电话、以及住址。</p>
+</blockquote>
+<h2 id="2-">2. 需求分析：</h2>
+<p>针对一般书店管理信息系统的需求，通过对书店管理工作过程的内容和数据流程分析，设计如下面所示的数据项：</p>
+<blockquote>
+<p>注册用户信息</p>
+</blockquote>
+<p>属性：<strong>用户ID</strong>，用户姓名，用户性别，用户电话，用户住址，生效日期，失效日期，违章状况，累计租赁书籍，备注</p>
+<p>主键：<strong>用户ID</strong></p>
+<blockquote>
+<p>书籍信息</p>
+</blockquote>
+<p>属性：<strong>ISBN</strong>，书名，书籍类型，书籍是否有包装，作者，出版社，出版日期，简介，购买价格，租赁价格，备注</p>
+<p>主键：<strong>ISBN</strong></p>
+<blockquote>
+<p>管理员信息</p>
+</blockquote>
+<p>属性：<strong>工作号</strong>，姓名，型别，电话，家庭住址，备注</p>
+<p>主键：<strong>工作号</strong></p>
+<blockquote>
+<p>派送员信息</p>
+</blockquote>
+<p>属性：<strong>派送员编号</strong>，姓名，型别，电话，家庭住址，备注</p>
+<p>主键：<strong>派送员编号</strong></p>
+<h3 id="2-1-">2.1 数据流程：</h3>
+<p>通过对系统的调查和可行性分析，画出系统的数据流程图：</p>
+<h4 id="2-1-1-">2.1.1 用户</h4>
+<p>用户对书店管理系统的要求有：</p>
+<ol>
+<li>能按各种方式（比如书名、编号、作者，类型）查询书店的藏书情况。</li>
+<li>能够方便地租赁图书、续租图书、归还图书、购买图书</li>
+<li>能够查询自己的基本资料、图书情况</li>
+<li>能够熟悉书店管理系统的使用。</li>
+</ol>
+<p>读者进入系统工作的流程图为：</p>
+<h4 id="2-1-2-">2.1.2 书店管理员</h4>
+<p>他们对图书管理系统的要求有：</p>
+<ol>
+<li>能方便的对图书进行录入登记，注销陈旧的书籍。</li>
+<li>能够方便地对用户进行登记，或注销已经近两年未使用的用户信息（基本信息，租赁信息）。</li>
+<li>能够随时发布一些诸如租赁图书超期情况、店内书籍情况、租赁情况的信息，以便及时提醒租赁快要超期的用户及时归还或是续租。</li>
+</ol>
+<p>书店管理员工作的流程图为:</p>
+<h4 id="2-1-3-">2.1.3 派送员</h4>
+<p>他们对图书管理系统的要求有：</p>
+<ol>
+<li>能够方便的获得用户的订单情况。（包括购买订单以及租赁订单）。</li>
+<li>能够从订单中浏览到用户的姓名，电话，住址。</li>
+</ol>
+<h2 id="3-">3. 概念模型设计</h2>
+<blockquote>
+<p>数据库需要表述的信息有以下几种：</p>
+</blockquote>
+<ol>
+<li>用户信息</li>
+<li>书籍信息</li>
+<li>管理员信息</li>
+<li>用户与书籍之间的关系(租赁关系及购买关系E-R图)</li>
+<li>管理员与书籍之间的关系（管理员_书籍E-R图）</li>
+<li>管理员与用户之间的关系（管理员_用户E-R图）</li>
+</ol>
+<h3 id="3-1-">3.1 管理员与用户之间的关系</h3>
+<h3 id="3-2-">3.2 管理员与书刊之间的关系</h3>
+<h3 id="3-3-">3.3 用户与书籍之间的关系</h3>
+<h3 id="3-4-">3.4 派送员与用户之间的关系</h3>
+<h2 id="4-">4.逻辑设计</h2>
+<p>从理论‘E/R模型’到理论‘关系模型’的整理转换，通过E/R模型到关系模型的转化，可以得到如下关系模式：</p>
+<blockquote>
+<p>租赁关系</p>
+</blockquote>
+<p>属性：<strong>工作号</strong>，<strong>用户ID</strong>，<strong>ISBN</strong>，是否续租，租赁日期，还书日期，备注。</p>
+<p>主键：工作号，用户身份证号，<strong>ISBN</strong></p>
+<blockquote>
+<p>管理员书籍关系</p>
+</blockquote>
+<p>属性：<strong>工作号</strong>，<strong>ISBN</strong>，添加时间，是否在店。</p>
+<p>主键：<strong>工作号</strong>，<strong>ISBN</strong></p>
+<blockquote>
+<p>管理员用户关系</p>
+</blockquote>
+<p>属性：<strong>工作号</strong>，<strong>用户ID</strong>，确认租还。</p>
+<p>主键：<strong>工作号</strong>，<strong>用户ID</strong></p>
+<blockquote>
+<p>订单信息</p>
+</blockquote>
+<p>属性：<strong>订单号</strong>，<strong>用户ID</strong>，<strong>ISBN</strong>，<strong>派送员编号</strong>，用户姓名，书籍名称，派送员姓名，派送员电话，书籍是否有包装，用户电话，用户住址，备注。</p>
+<p>主键：<strong>订单号</strong>，<strong>派送员编号</strong></p>
+<h2 id="5-">5. 数据库逻辑结构</h2>
+<h3 id="5-1-">5.1 出售图书信息表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">是否可为空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ISBN(key)</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">书籍名称</td>
+<td style="text-align:center">varchar(50)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">作者</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">类别</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">出版社</td>
+<td style="text-align:center">varchar(50)</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">出版日期</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">简介</td>
+<td style="text-align:center">varchar(200)</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">购买价格</td>
+<td style="text-align:center">numeric(5,2)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">备注</td>
+<td style="text-align:center">varchar(200)</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-2-">5.2 租赁图书信息表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">是否可为空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">书籍ID(key)</td>
+<td style="text-align:center">varchar(10)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">ISBN</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">租赁价格</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">是否可被租阅</td>
+<td style="text-align:center">varchar(2)</td>
+<td style="text-align:center">否</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-3-">5.3 用户信息表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">是否可为空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">用户ID(key)</td>
+<td style="text-align:center">varchar(10)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">用户姓名</td>
+<td style="text-align:center">varchar(10)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">密码</td>
+<td style="text-align:center">varchar(16)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">住址</td>
+<td style="text-align:center">varchar(100)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">联系电话</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">注册时间</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">违章情况</td>
+<td style="text-align:center">varchar(2)</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>累计租赁书籍</em></td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">备注</td>
+<td style="text-align:center">varchar(100)</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-4-">5.4 管理员信息表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">是否可为空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">工号(key)</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">管理员密码</td>
+<td style="text-align:center">varchar(16)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">管理员姓名</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">管理员电话</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">备注</td>
+<td style="text-align:center">varchar(100)</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-5-">5.5 派送员信息表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">是否可为空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">派送员编号(key)</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">派送员密码</td>
+<td style="text-align:center">varchar(16)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">派送员姓名</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">派送员电话</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">备注</td>
+<td style="text-align:center">varchar(100)</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-6-">5.6 租赁情况表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">是否可为空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">工号(key)</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">ISBN</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">用户ID</td>
+<td style="text-align:center">varchar(10)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">租赁日期</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">还书日期</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">备注</td>
+<td style="text-align:center">varchar(100)</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-7-">5.7 购买订单信息表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">是否可为空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">订单号(key)</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">派送员编号(key)</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">用户ID(key)</td>
+<td style="text-align:center">varchar(10)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">ISBN</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">书籍名称</td>
+<td style="text-align:center">varchar(50)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">购买价格</td>
+<td style="text-align:center">numeric(5,2)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">购买日期</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">用户姓名</td>
+<td style="text-align:center">varchar(10)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">住址</td>
+<td style="text-align:center">varchar(100)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">派送员电话</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">备注</td>
+<td style="text-align:center">varchar(100)</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-8-">5.8 租赁订单信息表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">是否可为空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">订单号(key)</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">派送员编号(key)</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">用户ID(key)</td>
+<td style="text-align:center">varchar(10)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">书籍ID(key)</td>
+<td style="text-align:center">varchar(10)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">ISBN</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">书籍名称</td>
+<td style="text-align:center">varchar(50)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">租赁价格</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">租赁日期</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">用户姓名</td>
+<td style="text-align:center">varchar(10)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">住址</td>
+<td style="text-align:center">varchar(100)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">派送员电话</td>
+<td style="text-align:center">varchar(12)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">备注</td>
+<td style="text-align:center">varchar(100)</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-9-">5.9 书籍评价表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">是否可为空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ISBN(key)</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">书籍名称</td>
+<td style="text-align:center">varchar(50))</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">内容合理评分</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">学术性评分</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">语言简洁评分</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-">6. 物理设计</h2>
+<pre class="editor-colors lang-"><div class="line"><span class="syntax--text syntax--plain syntax--null-grammar"><span>从理论‘关系模型’到实现/实施‘数据库建立’，物理文件的安排和建立索引</span></span></div></pre><h3 id="6-1-">6.1 建立索引</h3>
+<blockquote>
+<p>为了提高在表中搜索元组的速度，在实际实现的时候应该基于键码建立索引是各表中建立索引的表项：</p>
+</blockquote>
+<ol>
+<li>用户信息（用户ID）</li>
+<li>书籍信息（ISBN，书籍ID）</li>
+<li>管理员信息（工作号）</li>
+<li>派送员信息（派送员编号）</li>
+<li>租赁（工作号，读者学号，书籍ID）</li>
+<li>购买书籍订单（订单号）</li>
+<li>租赁书籍订单（订单号）</li>
+<li>管理员_书籍（工作号，ISBN）</li>
+<li>管理员_用户（工作号，用户ID）</li>
+<li>用户_派送员（用户ID，派送员编号）</li>
+</ol>
+<h3 id="6-2-sql-">6.2 用SQL实现设计</h3>
+<pre class="editor-colors lang-"><div class="line"><span class="syntax--text syntax--plain syntax--null-grammar"><span>实现该设计的环境为windows10-MySQL&nbsp;5.7</span></span></div></pre><pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>database</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>书店管理</span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre>
+<h4 id="6-2-1-">6.2.1  建立出售图书信息表</h4>
+<pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>table</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>出售图书信息</span></span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;ISBN&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>20</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>primary&nbsp;key</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;书籍名称&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>50</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;作者&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;类型&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>20</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;出版社&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>50</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;出版日期&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>datetime</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;简介&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>200</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;购买价格&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>numeric</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>5</span></span><span class="syntax--punctuation syntax--separator syntax--parameters syntax--comma syntax--sql"><span>,</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>2</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;备注&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre>
+<h4 id="6-2-2-">6.2.2 建立租赁图书信息表</h4>
+<pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>table</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>租赁图书信息</span></span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;书籍ID&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>10</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>primary&nbsp;key</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;ISBN&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>20</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;租赁价格&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>int</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;是否被租约&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>2</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>ISBN</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;出售图书</span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre>
+<h4 id="6-2-3-">6.2.3 建立用户信息表</h4>
+<pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>table</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>用户信息</span></span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;用户ID&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>10</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>primary&nbsp;key</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;用户姓名&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>10</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;密码&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>16</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;住址&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;联系电话&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;注册时间&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>datetime</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;违章情况&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>2</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;累计租赁书籍&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>int</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;备注&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre>
+<h4 id="6-2-4-">6.2.4 建立管理员信息表</h4>
+<pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>table</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>管理员信息</span></span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;工号&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>primary&nbsp;key</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;管理员密码&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>16</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;管理员姓名&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;管理员电话&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;备注&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre>
+<h4 id="6-2-5-">6.2.5 建立派送员信息表</h4>
+<pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>table</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>派送员信息</span></span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;派送员编号&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>primary&nbsp;key</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;派送员密码&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>16</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;派送员姓名&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;派送员电话&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;备注&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre>
+<h4 id="6-2-6-">6.2.6 建立租赁情况表</h4>
+<pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>table</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>租赁情况</span></span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;工号&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>primary&nbsp;key</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;ISBN&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>20</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;用户ID&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>10</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;租赁日期&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>datetime</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;还书日期&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>datetime</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;备注&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>工号</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;管理员信息</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>ISBN</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;出售图书信息</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>用户ID</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;用户信息</span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre>
+<h4 id="6-2-7-">6.2.7 建立购买订单信息表</h4>
+<pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>table</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>购买订单信息</span></span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;订单号&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>20</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;派送员编号&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;用户ID&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>10</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;ISBN&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>20</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;书籍名称&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>50</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;购买价格&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>numeric</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>5</span></span><span class="syntax--punctuation syntax--separator syntax--parameters syntax--comma syntax--sql"><span>,</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>2</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;购买日期&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>datetime</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;用户姓名&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>10</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;住址&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;派送员电话&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;备注&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>primary&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>订单号</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span><span>派送员编号</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span><span>用户ID</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>派送员编号</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;派送员信息</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>用户ID</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;用户信息</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>ISBN</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;出售图书信息</span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre>
+<h4 id="6-2-8-">6.2.8 建立租赁信息订单表</h4>
+<pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>table</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>租赁订单信息</span></span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;订单号&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>20</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;派送员编号&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;用户ID&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>10</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;书籍ID&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>10</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;ISBN&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>20</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;书籍名称&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>50</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;租赁价格&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>int</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;租赁时间&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>datetime</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;用户姓名&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>10</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;住址&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;派送员电话&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>12</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;备注&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>100</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>primary&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>订单号</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span><span>派送员编号</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span><span>用户ID</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span><span>书籍ID</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>派送员编号</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;派送员信息</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>用户ID</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;用户信息</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>书籍ID</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;租赁图书信息</span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>ISBN</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;出售图书信息</span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre>
+<h4 id="6-2-9-">6.2.9 建立书籍评价表</h4>
+<pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--meta syntax--create syntax--sql"><span class="syntax--keyword syntax--other syntax--create syntax--sql"><span>create</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--sql"><span>table</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--sql"><span>书籍评价信息</span></span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;ISBN&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>20</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>primary&nbsp;key</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;书籍名称&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>varchar</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--constant syntax--numeric syntax--sql"><span>50</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--other syntax--DDL syntax--create syntax--II syntax--sql"><span>not&nbsp;null</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;内容合理评分&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>int</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;学术性评分&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>int</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;语言简洁评分&nbsp;</span><span class="syntax--storage syntax--type syntax--sql"><span>int</span></span><span class="syntax--punctuation syntax--separator syntax--comma syntax--sql"><span>,</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>foreign&nbsp;key</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span>ISBN</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--modifier syntax--sql"><span>references</span></span><span>&nbsp;出售图书信息</span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div></pre></body>
+</html>
